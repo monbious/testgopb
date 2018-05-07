@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package pbdept;
+
+
+service Departments {
+    rpc GetDepartments(DepartmentsReq) returns (DepartmentsRes) {};
+}
+
+message DepartmentsRes {
+    repeated Department Depts = 1;
+}
+
+message Department {
+    int32  DeptId = 1;
+    string DeptName = 2;
+}
+
+message DepartmentsReq {
+
+}

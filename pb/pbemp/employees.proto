@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package pbemp;
+
+service Employees{
+    rpc GetEmployees(EmployeesReq) returns (EmployeesRes) {};
+    rpc SaveEmp(EmployeesReq) returns (EmployeesRes) {};
+    rpc DelEmp(EmployeesReq) returns (EmployeesRes) {};
+    rpc Update(EmployeesReq) returns (EmployeesRes) {};
+}
+
+message EmployeesRes {
+
+    int32 EmpId = 1;
+    string EmpName = 2;
+    string Gender = 3;
+    string Email = 4;
+    Department Dept = 5;
+    bool Boo = 6;
+}
+
+message Department {
+    int32  DeptId = 1;
+    string DeptName = 2;
+}
+
+message EmployeesReq {
+
+    int32 EmpId = 1;
+    string EmpName = 2;
+    string Gender = 3;
+    string Email = 4;
+    int32 DeptId = 5;
+
+}
